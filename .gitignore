@@ -8,3 +8,6 @@ build/
 # Metals (Scala)
 .metals/
 .bloop/
+
+# idea
+.idea
