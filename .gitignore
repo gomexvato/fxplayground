@@ -1,0 +1,10 @@
+# Gradle
+.gradle/
+build/
+
+# VS Code
+.vscode/
+
+# Metals (Scala)
+.metals/
+.bloop/
