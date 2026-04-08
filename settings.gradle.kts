@@ -1,3 +1,3 @@
 rootProject.name = "fxplayground"
 
-include("app", "components")
+include("app", "components", "core", "utils")
