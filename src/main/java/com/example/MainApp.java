@@ -17,9 +17,11 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         countLabel = new Label("Clicks: 0");
+        countLabel.setId("countLabel");
         countLabel.setStyle("-fx-font-size: 24px;");
 
         Button clickButton = new Button("Click me!");
+        clickButton.setId("clickButton");
         clickButton.setStyle("-fx-font-size: 16px; -fx-padding: 10 20;");
         clickButton.setOnAction(e -> {
             clickCount++;
@@ -27,6 +29,7 @@ public class MainApp extends Application {
         });
 
         Button resetButton = new Button("Reset");
+        resetButton.setId("resetButton");
         resetButton.setStyle("-fx-font-size: 14px;");
         resetButton.setOnAction(e -> {
             clickCount = 0;
