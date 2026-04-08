@@ -10,5 +10,5 @@ java {
 dependencies {
     implementation(project(":core"))
     implementation(project(":components"))
-    implementation("com.google.code.gson:gson:2.8.9")
+    implementation(libs.gson)
 }

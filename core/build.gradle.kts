@@ -8,6 +8,6 @@ java {
 }
 
 dependencies {
-    implementation("commons-io:commons-io:2.14.0")
-    testImplementation("junit:junit:4.13.2")
+    implementation(libs.commons.io)
+    testImplementation(libs.junit)
 }

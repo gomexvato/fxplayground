@@ -9,10 +9,10 @@ java {
 }
 
 dependencies {
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("org.testfx:testfx-core:4.0.18")
-    testImplementation("org.testfx:testfx-junit:4.0.18")
-    testImplementation("org.testfx:openjfx-monocle:8u76-b04")
+    testImplementation(libs.junit)
+    testImplementation(libs.testfx.core)
+    testImplementation(libs.testfx.junit)
+    testImplementation(libs.testfx.monocle)
 }
 
 application {

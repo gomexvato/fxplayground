@@ -1,0 +1,14 @@
+[versions]
+junit = "4.13.2"
+testfx = "4.0.18"
+monocle = "8u76-b04"
+commonsIo = "2.14.0"
+gson = "2.8.9"
+
+[libraries]
+junit = { module = "junit:junit", version.ref = "junit" }
+testfx-core = { module = "org.testfx:testfx-core", version.ref = "testfx" }
+testfx-junit = { module = "org.testfx:testfx-junit", version.ref = "testfx" }
+testfx-monocle = { module = "org.testfx:openjfx-monocle", version.ref = "monocle" }
+commons-io = { module = "commons-io:commons-io", version.ref = "commonsIo" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
