@@ -3,15 +3,16 @@ package com.components;
 import com.components.boxes.FxHBox;
 import com.components.boxes.FxVBox;
 import com.components.buttons.FxLink;
+import com.components.submittables.FxSubmittableTextField;
+import com.core.Unit;
 import javafx.animation.PauseTransition;
 import javafx.beans.property.*;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.util.Duration;
+import javafx.util.Pair;
 
-import java.util.function.Function;
-import java.util.function.IntFunction;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class Fx {
     /**
@@ -160,5 +161,51 @@ public class Fx {
         T[] props = (T[]) tArrInstanceFn.apply(length);
         for(int i=0;i<length;i++) props[i] = tInstanceFn.get();
         return props;
+    }
+
+    /**
+     * Convenient methods to instantiate submittable text field
+     */
+
+    public static <T> FxSubmittableTextField<T> textField() {
+        return textField(true, null);
+    }
+
+    public static <T> FxSubmittableTextField<T> textField(BiConsumer<FxSubmittableTextField<T>, T> consumer) {
+        return textField(true, consumer);
+    }
+    public static <T> FxSubmittableTextField<T> textField(boolean editable) {
+        return new FxSubmittableTextField<>(null, null, editable, null);
+    }
+    public static <T> FxSubmittableTextField<T> textField(boolean editable,
+                                                          BiConsumer<FxSubmittableTextField<T>, T> consumer) {
+        return new FxSubmittableTextField<>(null, null, editable, consumer);
+    }
+    public static <T> FxSubmittableTextField<T> textField(Unit unit, String format) {
+        return new FxSubmittableTextField<>(format, unit);
+    }
+    public static <T> FxSubmittableTextField<T> textField(Unit unit, String format,
+                                                          Pair<Predicate<T>,String>... validations) {
+        return new FxSubmittableTextField<>(format, unit, null, validations);
+    }
+    public static <T> FxSubmittableTextField<T> textField(Unit unit, String format,
+                                                          BiConsumer<FxSubmittableTextField<T>, T> consumer,
+                                                          Pair<Predicate<T>,String> validations
+    ) {
+        return new FxSubmittableTextField<>(format, unit, consumer, validations);
+    }
+
+    public static FxSubmittableTextField<Double> dTextField() {
+        return textField(true, null);
+    }
+
+    public static FxSubmittableTextField<Double> dTextField(Unit unit, String format,
+                                                            Pair<Predicate<Double>, String>... validations) {
+        return new FxSubmittableTextField<>(format, unit, null, validations);
+    }
+
+    public static FxSubmittableTextField<Double> dTextField(Unit unit, String format,
+                                                            Function<Double, String> isValidationFn) {
+        return new FxSubmittableTextField<>(format, unit, null, isValidationFn);
     }
 }

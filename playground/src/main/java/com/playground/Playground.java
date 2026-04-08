@@ -1,8 +1,10 @@
 package com.playground;
 
+import com.components.Fx;
+import com.components.boxes.FxHBox;
+import com.components.boxes.FxVBox;
 import com.core.utils.DoubleUtils;
 import com.core.utils.StringUtils;
-import com.components.boxes.FxHBox;
 import com.playground.components.*;
 import javafx.application.Application;
 import javafx.beans.property.BooleanProperty;
@@ -17,8 +19,6 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.concurrent.CompletableFuture;
-
-import com.components.Fx;
 
 // Showcase app for the different components in this module
 public class Playground extends Application {
@@ -39,11 +39,13 @@ public class Playground extends Application {
     public void start(Stage stage) {
         primaryStage = stage;
         String docsPath = getParameters().getRaw().get(0);
+        String pgPath = getParameters().getRaw().get(1);
 
-        String jPath = System.getProperty("user.dir");//+"/src/playground/java";
-        componentJavaPath = new File(jPath).getAbsolutePath()+"/src/main/java";
-        playgroundJavaPath = new File(jPath).getAbsolutePath()+"/../Playground/src/main/java";
-        String persisterPath = getParameters().getRaw().get(1);
+        //String jPath = System.getProperty("pwd");//+"/src/playground/java";
+        componentJavaPath = new File(docsPath).getAbsolutePath();
+                //new File(jPath).getAbsolutePath()+"/src/main/java";
+        playgroundJavaPath = new File(pgPath).getAbsolutePath();//+"/../../playground/src/main/java";
+        String persisterPath = getParameters().getRaw().get(2);
         this.persister = Persister.instance(new File(persisterPath));
         this.hamburgerLink = hamburger();
         FilesystemComponents fsc = FilesystemComponents.api.apply(docsPath);
@@ -75,9 +77,9 @@ public class Playground extends Application {
     }
 
     private Node sidebar() {
-        PFxVBox.setVgrow(tree, Priority.ALWAYS);
+        FxVBox.setVgrow(tree, Priority.ALWAYS);
         tree.treeView.setShowRoot(false);
-        return new PFxVBox(tree);
+        return new FxVBox(tree);
     }
 
     private Pane bottomBox() {
@@ -86,19 +88,19 @@ public class Playground extends Application {
         ))).style("-fx-padding: 5px 30px;-fx-pref-height:30px;-fx-background-color:#efefef");
     }
 
-    private class Main extends PFxVBox {
+    private class Main extends FxVBox {
         Main() {
             super(0);
             PFxScrollPane scrollPane = new PFxScrollPane(content());
             add(title(), scrollPane);
             setStyle("-fx-border-color: #ddd;-fx-border-width: 10;");
-            PFxVBox.setVgrow(scrollPane, Priority.ALWAYS);
+            FxVBox.setVgrow(scrollPane, Priority.ALWAYS);
         }
 
         private Node title() {
             PFxLabel titleLabel = PFxLabel.h3("FxComponents");
-            PFxHBox box = new PFxHBox(new PFxVBox(hamburgerLink).style("-fx-alignment:center"), titleLabel);
-            box.setStyle("-fx-padding: 0 5 0 5;-fx-background-color: white;");
+            FxHBox box = Fx.hBox(Fx.vBox(hamburgerLink).style("-fx-alignment:center"), titleLabel);
+            box.style("-fx-padding: 0 5 0 5;-fx-background-color: white;");
             tree.selectedNameProperty().addListener((o, ov, nv) -> {
                 if (nv != null) {
                     titleLabel.setText(nv);
@@ -108,7 +110,7 @@ public class Playground extends Application {
         }
 
         private Node content() {
-            PFxVBox box = new PFxVBox("playground-main");
+            FxVBox box = Fx.vBox("playground-main");
             PFxLabel description = new PFxLabel(
                     "Application to showcase, document and test components in this module.");
             description.setStyle("-fx-padding: 5");

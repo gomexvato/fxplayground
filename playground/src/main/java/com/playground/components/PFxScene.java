@@ -4,7 +4,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class PFxScene extends Scene {
-    protected static String[] STYLESHEETS = {"styles/FxComponents.css"};
+    protected static String[] STYLESHEETS = {"styles/components.css"};
 
     public PFxScene(Parent root, int width, int height, String[] styles) {
         super(root, width, height);

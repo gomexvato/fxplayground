@@ -10,12 +10,17 @@ import java.util.stream.Collectors;
 
 public class VariantLoader {
 
+    private static int getSrcMainJavaIndex(String path) {
+        String normalized = path.replace("\\", "/");
+        return normalized.indexOf("src/main/java")+14;
+    }
+
     // loads all java files in the given package
     // expects all files to be ComponentVariant implementations
     public static ComponentVariant[] loadVariants(String variantsDirPath) {
         try {
             String path = new File(variantsDirPath).getAbsolutePath();
-            String pkg = path.substring(path.indexOf("\\java\\")+6).replaceAll("\\\\", ".");
+            String pkg = path.substring(getSrcMainJavaIndex(path)).replaceAll("[/\\\\]", ".");
             List<File> files = FileUtils.list(variantsDirPath, "java", 1, null);
             List<File> variants = ListUtils.filter(files, file -> file.getName().startsWith("Variant"));
             ComponentVariant[] all = new ComponentVariant[variants.size()];

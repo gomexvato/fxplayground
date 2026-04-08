@@ -1,0 +1,1410 @@
+.root {
+    /* Default font */
+    -fx-font-family:				"Calibri";
+    -fx-font-size:					12pt;
+
+    /* Window background */
+    -fx-background-color:			white;
+
+    /* Color palette */
+    /* These are colors unique to Aspen, not in the standard JavaFX color library */
+    color-dark-charcoal:			rgb(41, 44, 49);
+    color-medium-charcoal:			rgb(66, 71, 79);
+    color-light-charcoal:			rgb(73, 76, 84);
+    color-shadow-charcoal:			rgba(73, 76, 84, 0.66);
+
+    color-dark-neutral:				rgb(113, 115, 119);
+    color-medium-neutral:			rgb(154, 154, 154);
+    color-medium-light-neutral:		rgb(202, 204, 206);
+    color-light-neutral:			rgb(232, 234, 236);
+
+    color-dark-turquoise:			rgb(0, 100, 130);
+    color-medium-turquoise:			rgb(0, 133, 178);
+    color-light-turquoise:			rgb(0, 154, 219);
+    color-faint-turquoise:			rgba(0, 154, 219, 0.13);
+
+    color-good-green:				rgb(0, 183, 0);
+    color-warning-yellow:			rgb(207, 178, 0);
+    color-fault-red:				rgb(178, 0, 0);
+
+    /* Header color palette */
+    color-hdr-light-powder:			rgb(221, 235, 247);
+    color-hdr-medium-powder:		rgb(189, 215, 238);
+    color-hdr-dark-powder:			rgb(155, 194, 230);
+
+    color-hdr-light-orange:			rgb(252, 228, 214);
+    color-hdr-medium-orange:		rgb(248, 203, 173);
+    color-hdr-dark-orange:			rgb(244, 176, 132);
+
+    color-hdr-light-yellow:			rgb(255, 242, 204);
+    color-hdr-medium-yellow:		rgb(255, 230, 153);
+    color-hdr-dark-yellow:			rgb(255, 217, 102);
+
+    color-hdr-light-midnight:		rgb(217, 225, 242);
+    color-hdr-medium-midnight:		rgb(180, 198, 231);
+    color-hdr-dark-midnight:		rgb(142, 169, 219);
+
+    color-hdr-light-green:			rgb(226, 239, 218);
+    color-hdr-medium-green:			rgb(198, 224, 180);
+    color-hdr-dark-green:			rgb(169, 208, 142);
+
+    /*
+     * Preset color IDs
+     */
+    /* Basic color presets */
+    background-color:				white;
+    text-color:						black;
+    text-color-disabled:			color-medium-neutral;
+    focus-color:					color-light-turquoise;
+
+    /* Button-style color presets */
+    /* e.g. Button, ToggleButton */
+    button-body:					color-light-neutral;
+    button-text:					color-medium-turquoise;
+
+    button-text-disabled:			color-medium-neutral;
+
+    button-text-hover:				color-dark-turquoise;
+
+    button-body-armed:				color-light-turquoise;
+    button-text-armed:				white;
+
+    button-body-selected:			color-medium-turquoise;
+    button-text-selected:			white;
+    button-body-selected-hover:		color-dark-turquoise;
+    button-body-selected-disabled:	color-dark-turquoise;
+    button-text-selected-disabled:	color-light-neutral;
+
+    /* Symbolized-style color presets */
+    /* e.g. CheckBox, RadioButton */
+    symbolized-box:					color-medium-neutral;
+    symbolized-space:				white;
+    symbolized-mark:				black;
+
+    symbolized-box-hover:			color-dark-neutral;
+
+    symbolized-space-armed:			color-light-neutral;
+
+    symbolized-space-disabled:		color-light-neutral;
+    symbolized-mark-disabled:		color-dark-neutral;
+
+    /* Selector-style color presets */
+    /* e.g. ChoiceBox, ComboBox */
+    selector-box:					color-medium-neutral;
+    selector-space:					white;
+    selector-arrow:					color-dark-neutral;
+
+    selector-box-hover:				color-dark-neutral;
+
+    selector-space-showing:			color-light-neutral;
+
+    selector-space-disabled:		color-light-neutral;
+
+    /* TextInput-style color presets */
+    textinput-box:					color-medium-neutral;
+    textinput-space:				white;
+
+    textinput-box-hover:			color-dark-neutral;
+
+    textinput-space-disabled:		color-light-neutral;
+
+    /* Slider-style color presets */
+    slider-box:						color-medium-neutral;
+    slider-space:					white;
+    slider-thumb:					black;
+
+    slider-box-hover:				color-dark-neutral;
+
+    slider-space-armed:				color-light-neutral;
+
+    slider-space-disabled:			color-light-neutral;
+    slider-thumb-disabled:			color-dark-neutral;
+
+    /* MenuBar-style color presets */
+    menubar-background:				color-light-neutral;
+
+    /* Common colors */
+    color-dirty-background:         #EFFAFF;
+    color-invalid-background:       #FFCCCC;
+    color-indeterminate-background: #A1E1FF;
+    color-indeterminate-text:       #FFFFFF;
+    color-locked-background:        #6A8E9E;
+    color-locked-text:              #FFFFFF;
+    color-component-border:         #CCCCCC;
+    color-disable-background:       #F4FBFC;
+    color-disable-text:             #6A8E9E;
+}
+
+.fx-clickable {
+    -fx-cursor: hand;
+}
+
+.fx-background-odd {
+    -fx-background-color: #efefef;
+}
+
+.fx-background-even {
+    -fx-background-color: #FFF;
+}
+
+.fx-radios-box {
+    -fx-padding: 0 0 5 0;
+}
+
+.fx-radios-box .fx-labels-box > .fx-labels-label {
+    -fx-min-width: 100px;
+    -fx-max-width: 100px;
+    -fx-padding: -14 0 0 0;
+}
+
+.fx-radios-row .radio-button {
+    -fx-padding: 2px 0 0 0!important;
+}
+
+.fx-radio-row {
+    -fx-padding: 0 4 0 4;
+}
+
+.fx-radio-row-label {
+    -fx-padding: 0;
+    -fx-min-width: 70px;
+    -fx-max-width: 70px;
+    -fx-text-alignment: center;
+}
+
+.fx-radio-col {
+    -fx-min-width: 46px;
+}
+
+.fx-radio-group {
+    -fx-padding: 0 0 5px 0;
+}
+
+/* fx-radio-box */
+.fx-radio-box .radio {
+    -fx-background-color: white;
+    -fx-border-color: #444;
+    -fx-cursor: hand;
+    -fx-background-image: null;
+
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 3px;
+}
+
+.fx-radio-box .dot {
+    -fx-background-radius: 0px;
+}
+
+.fx-radio-box:hover .radio {
+    -fx-border-color: color-light-turquoise;
+}
+
+.fx-radio-box-indeterminate .dot {
+    -fx-background-color: color-indeterminate;
+}
+
+.fx-radio-box-indeterminate:selected .radio {
+    -fx-background-color: white!important;
+    -fx-padding:2px 4px 4px 4px!important;
+}
+
+.fx-radio-box-indeterminate .radio {
+    -fx-background-color: color-indeterminate!important;
+    -fx-border-color: color-indeterminate!important;
+}
+
+.fx-radio-box:disabled {
+    -fx-opacity: .8;
+}
+
+.fx-radio-box:disabled .radio {
+    -fx-opacity: .8;
+}
+
+.fx-radio-box:selected .radio,
+.fx-radio-box:selected:disabled .radio{
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 3px;
+}
+
+.fx-radio-box:selected .radio {
+    -fx-background-radius: 0;
+    -fx-background-image: null;
+}
+
+.fx-radio-box:disabled .radio {
+    -fx-background-radius: 0;
+    -fx-background-color: inherit;
+    -fx-border-radius: 0;
+}
+
+.fx-disabled,
+.fx-disabled > .label,
+.fx-disabled > .label,
+.fx-disabled > * > .label,
+.fx-disabled  .label,
+.fx-disabled > * .label,
+.fx-disabled > * .binary-toggle-button {
+    -fx-opacity: .6;
+    -fx-cursor: default;
+}
+
+.fx-disabled > * .binary-toggle-button:selected,
+.fx-disabled > .binary-toggle-button:selected,
+.fx-disabled .binary-toggle-button:selected {
+    -fx-background-color: color-light-charcoal!important;
+}
+
+.fx-error {
+    -fx-text-fill: red;
+}
+
+/* Label */
+.fx-label {
+    -fx-text-fill: text-color;
+}
+
+.fx-label-vertical {
+    -fx-rotate: -90;
+    -fx-padding: 0px 0 12px 0;
+    -fx-text-fill: #444;
+}
+
+.fx-label-h1 {
+    -fx-font-size: 2.5em;
+    -fx-font-weight: bold;
+}
+
+.fx-label-h2 {
+    -fx-font-size: 2em;
+    -fx-font-weight:bold;
+}
+
+.fx-label-h3 {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.fx-label-h4 {
+    -fx-padding: 5 0 0 0;
+    -fx-font-size: 1em;
+    -fx-font-weight: bold;
+}
+
+.fx-label-p {
+    -fx-font-size: 1em;
+    -fx-text-fill: #000;
+    -fx-padding: 5 0 0 0;
+}
+
+.fx-label-red {
+    -fx-font-weight: bold;
+    -fx-text-fill: darkred!important;
+    -fx-font-size: 18;
+}
+
+.fx-label-italic {
+    -fx-font-style: italic;
+    -fx-text-fill: #222!important;
+}
+
+.fx-label-with-tooltip.label {
+    -fx-text-fill: #002382!important;
+}
+
+.fx-label-with-tooltip.label .text {
+    -fx-border-style: none none dashed none;
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+    -fx-padding: 0 0 2px 0;
+}
+
+.fx-label-with-tooltip.label .tooltip {
+    -fx-font-size: 18px;
+}
+
+.fx-label-with-tooltip.label:hover {
+    -fx-text-fill: #000!important;
+}
+
+
+/* fx-header */
+.fx-header {
+    -fx-font-weight: bold;
+    -fx-padding: 3px 10px 3px 10px;
+    -fx-background-color: color-light-neutral;
+}
+
+/* fx-pane */
+.fx-pane {
+    -fx-border-width: 1;
+    -fx-border-color: color-medium-neutral;
+    -fx-background-insets: 0px, 1px;
+    -fx-padding: 0;
+}
+
+.fx-pane-title > .title {
+    -fx-background-color: color-light-neutral;
+    -fx-padding: 3px 10px 3px 10px;
+}
+
+.fx-pane-title > .fx-clickable {
+    -fx-background-color: transparnt!important;
+}
+
+.fx-pane-title > .title > * .fx-header {
+    -fx-padding: 0;
+    -fx-background-color: transparent!important;
+    -fx-font-weight: bold;
+}
+
+.fx-pane-title > *.content {
+    -fx-background-color: white;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+}
+
+.fx-pane-content {
+    -fx-background-color: white;
+    -fx-padding: 5px 10px;
+}
+
+.fx-pane-collapsible > *.content {
+    -fx-padding: 0;
+}
+
+.fx-pane-extra {
+    -fx-padding: 5 10 5 10;
+    -fx-background-color: white;
+}
+
+.fx-pane-md {
+    -fx-pref-width: 350;
+    -fx-min-width: 350;
+    -fx-max-width: 350;
+    -fx-padding: 10;
+}
+
+.fx-pane-sm {
+    -fx-pref-width: 200;
+    -fx-min-width: 200;
+    -fx-max-width: 200;
+}
+
+.fx-pane-advanced > .fx-pane-title .title {
+    -fx-cursor: default!important;
+}
+
+.fx-pane-advanced > .fx-pane-title .title > .arrow-button {
+    -fx-padding: 0;
+}
+
+.fx-pane-advanced > .fx-pane-title > .title > .arrow-button > .arrow {
+    -fx-shape: null;
+    -fx-padding: 0;
+}
+
+.fx-pane-advanced-bottom {
+    -fx-background-color: #EEF5Fb;
+    -fx-padding: 0 0 8 0!important;
+}
+
+.fx-pane-advanced-header {
+    -fx-background-color: #EEF5Fb;
+    -fx-border-color: #DDEBF7;
+    -fx-border-width: 2px;
+    -fx-border-style: solid none none none;
+    -fx-padding: 5 10;
+    -fx-cursor: hand;
+}
+
+.fx-pane-advanced-header:hover > .fx-link {
+    -fx-text-fill: color-dark-turquoise!important;
+}
+
+
+.fx-titled-pane-hidden > *.title {
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+    -fx-text-fill: white;
+}
+
+.fx-titled-pane-hidden > *.content {
+    -fx-border-width: 0;
+}
+
+.fx-hmenu-labels {
+    -fx-spacing: 0;
+    -fx-padding: 0 0 10px 0;
+}
+
+.fx-hmenu-labels .fx-label {
+    -fx-font-size: 15px;
+    -fx-font-family: Arial;
+    -fx-padding: 2px 0 11px 0;
+}
+
+.fx-button-link {
+    -fx-background-color: transparent!important;
+    -fx-padding: 0!important;
+    -fx-border-with: 0;
+}
+
+.fx-button-icon {
+    -fx-background-color: white;
+    -fx-background-insets: 1px;
+    -fx-background-radius: 50%;
+    -fx-padding: 0!important;
+    -fx-max-width: 20px!important;
+    -fx-max-height: 20px!important;
+}
+
+.fx-button-icon:focused {
+    -fx-background-color: white;
+    -fx-background-insets: 1px;
+}
+
+.fx-button-icon:hover .fx-icon-info {
+    icon-color: color-dark-turquoise;
+}
+
+.fx-button-icon:focused .fx-icon-info {
+    -fx-background-color: icon-color;
+}
+
+.fx-button-icon:armed .fx-icon-info {
+    icon-color: focus-color;
+}
+
+.fx-button-icon:disabled .fx-icon-info {
+    icon-color: color-medium-neutral;
+}
+
+.fx-button-selected:disabled {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-opacity: 1;
+    -fx-cursor: pointer;
+    -fx-font-weight: null;
+    -fx-padding: 2 4 2 4;
+    -fx-min-width: 105;
+}
+
+.fx-icon-info {
+    icon-color: color-medium-turquoise;
+    -fx-background-color: icon-color;
+    -fx-padding: 0.583333em; /* 7 */
+    -fx-shape: "M150,75c0,31.655-20.641,60.633-50.586,70.937
+    c-30.267,10.415-64.664-0.054-84.066-25.47C-4.085,95.01-4.978,58.876,13.196,32.499C31.328,6.183,65.114-5.938,95.843,2.934
+    C127.566,12.093,150,42.001,150,75z M75.89,132.346c7.676,0,15.354,0.24,23.024,0.495c0-1.408,0.784-5.689,0-6.766
+    c-4.268-0.327-11.424,0.679-12.3-4.797c-1.737-11.011-0.625-22.981-0.51-34.067c0.115-11.003,0.313-22.033,1.174-33.006
+    c-2.211-3.418-10.275,1.356-13.483,2.166c-6.987,1.764-14.161,2.734-21.339,3.276c-0.491,0.65-0.076,6.351,0.343,6.368
+    c3.241,0.13,7.693-0.358,10.681,1.017c3.549,1.633,2.066,16.934,2.152,20.554c0.256,10.754,0.805,21.997-0.55,32.705
+    c-0.66,6.061-5.063,5.433-10.123,5.68c-3.99,0.195-2.503,3.3-2.503,6.87C60.262,132.639,68.079,132.346,75.89,132.346z
+    M66.277,16.861c-11.73,11.73,6.424,29.884,18.154,18.154C96.151,23.295,78.013,5.128,66.277,16.861
+    C63.773,19.365,68.78,14.358,66.277,16.861z";
+}
+
+.fx-popup {
+    -fx-background-color: color-medium-neutral, white;
+    -fx-background-insets: 0px, 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.0, -3, 3);
+    -fx-padding: 1px;
+}
+
+.fx-popup .fx-popup-content {
+    -fx-font-size: 10pt;
+    -fx-padding: 0px 10px 10px 10px;
+}
+
+.fx-modal {
+    -fx-padding:1em;
+    -fx-background-color: #efefef;
+    -fx-border-color: #ddd;
+}
+
+.fx-link {
+    -fx-text-fill: #888;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-underline: true;
+}
+
+.fx-link:hover {
+    -fx-text-fill: #222;
+}
+
+.fx-link-selected {
+    -fx-text-fill: color-medium-turquoise;
+}
+
+.fx-link-selected:hover {
+    -fx-text-fill: color-dark-turquoise;
+}
+
+.fx-link-highlight {
+    -fx-text-fill: color-medium-turquoise;
+}
+
+.fx-link-highlight:hover {
+    -fx-text-fill: color-dark-turquoise;
+}
+
+/* fx-button, fx-toggle-button */
+.fx-button,
+.fx-toggle-button {
+    body-color: button-body;
+    text-color: button-text;
+    -fx-background-color: body-color;
+    -fx-background-insets: 0px;
+    -fx-background-radius: 5px;
+    -fx-font-weight: bold;
+    -fx-padding: 0.166667em 1.0em 0.166667em 1.0em; /* 2 12 2 12 */
+    -fx-text-fill: text-color;
+}
+
+.fx-button:hover,
+.fx-toggle-button:hover {
+    text-color: button-text-hover;
+}
+
+.fx-toggle-button:selected:hover {
+    body-color: button-body-selected-hover;
+}
+
+.fx-button:focused,
+.fx-toggle-button:focused {
+    -fx-background-color: focus-color, body-color;
+    -fx-background-insets: 0px, 2px;
+    -fx-background-radius:  5px, 3px;
+}
+
+.fx-button:armed,
+.fx-toggle-button:armed {
+    body-color: button-body-armed;
+    text-color: button-text-armed;
+}
+
+.fx-toggle-button:selected {
+    body-color: button-body-selected;
+    text-color: button-text-selected;
+}
+
+.fx-button:disabled,
+.fx-toggle-button:disabled {
+    text-color: button-text-disabled;
+    -fx-opacity: 1.0;
+}
+
+.fx-toggle-button:selected:disabled {
+    body-color: button-body-selected-disabled;
+    text-color: button-text-selected-disabled;
+}
+
+.fx-content > .fx-selectfield,
+.fx-content > * .fx-selectfield {
+    -fx-pref-width: 150;
+}
+
+.fx-content > .fx-textfield,
+.fx-content > * .fx-textfield {
+    -fx-pref-width: 150;
+}
+
+.fx-content > .fx-choicebox,
+.fx-content > * .fx-choicebox {
+    -fx-pref-width: 150;
+}
+
+.fx-content > .binary-toggle-button,
+.fx-content > * .binary-toggle-button {
+    -fx-cursor: hand;
+    -fx-pref-width: 60;
+
+    -fx-border-color: red;
+    -fx-border-width: 1;
+}
+
+.binary-toggle-button {
+    -fx-cursor: hand;
+}
+
+.fx-content > .text-entry-spinner,
+.fx-content > * .text-entry-spinner {
+    -fx-pref-width: 150;
+}
+
+.fx-content > * .text-entry-spinner > .text-field {
+    -fx-pref-width: 130;
+}
+
+.fx-content > * .text-entry-spinner > *.text-field {
+    -fx-pref-width: 130;
+}
+
+/* fx-content-md */
+.fx-content-md .lcd-text-field-spinner,
+.fx-content-md .lcd-text-field,
+.fx-content-md .text-entry-spinner {
+    -fx-pref-width: 120;
+}
+
+
+/* fx-thresholds-histo */
+.fx-thresholds-histo {
+    -fx-padding: 0;
+    -fx-min-height: 330;
+}
+
+/* fx-thresholds-chart */
+.fx-thresholds-chart {
+    -fx-min-width: 420;
+    -fx-padding: 0;
+}
+
+.fx-thresholds-chart .chart-bar {
+    -fx-background-color: #ddd;
+    -fx-border-color: #eee;
+    -fx-border-width: 1;
+}
+
+.fx-thresholds-chart > * .axis:left,
+.fx-thresholds-chart > * .axis:bottom {
+    -fx-border-color: white;
+}
+
+.fx-thresholds-chart > * .axis {
+    -fx-start-margin: 2em;
+    -fx-end-margin: -2em;
+}
+
+.fx-thresholds-chart .chart-content .chart-plot-background {
+    -fx-background-color: white;
+}
+
+.fx-thresholds-chart .chart-content {
+    -fx-padding:0;
+}
+
+/* fx-thresholds-table */
+.fx-thresholds-table {
+    -fx-background-color: white;
+    -fx-min-height: 330;
+}
+
+.fx-thresholds-table > .table-view {
+    -fx-min-height: 90;
+    -fx-max-height: 90;
+}
+
+.fx-thresholds-table .column-header {
+    -fx-font-size: 16;
+}
+
+.fx-thresholds-table .table-row-cell {
+    -fx-font-size: 16;
+}
+
+.fx-column-special {
+    -fx-background-color: #ccc;
+}
+
+/* FxTabPane */
+
+.fx-tab-pane.tab-pane {
+    -fx-border-color: #666;
+    -fx-padding: 0;
+}
+
+.fx-tab-pane.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.fx-tab-pane.tab-pane > * .tab-header-background {
+    -fx-border-width: 0;
+    -fx-background-color: white;
+}
+
+.fx-tab-pane.tab-pane .tab {
+    -fx-background-color: white!important;
+    -fx-border-width: 0;
+}
+
+.fx-tab-pane.tab-pane .tab:selected {
+    -fx-border-width: 0;
+    -fx-focus-color: transparent;
+}
+
+.fx-tab-pane.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: color-medium-turquoise;
+    -fx-border-width: 0;
+    -fx-focus-color: transparent;
+}
+
+.fx-tab-pane .tab {
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+.fx-tab-pane.tab-pane .tab .tab-label {
+    -fx-text-fill: #888;
+    -fx-border-width: 0;
+}
+
+.fx-tab-content {
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: #666;
+    -fx-padding: 5;
+    -fx-min-width: 200;
+}
+
+.fx-textfield .fx-lock-icon {
+    -fx-shape: "M103.969,66.75H40.032h-12v12v23.546v23.546c0,6.627,5.373,12,12,12h63.937c6.627,0,12-5.373,12-12v-23.546V78.75v-12 H103.969z M77.783,103.254v24.994H66.216v-24.994c-4.912-2.211-8.337-7.138-8.337-12.873c0-7.799,6.322-14.121,14.121-14.121 s14.121,6.322,14.121,14.121C86.121,96.117,82.695,101.044,77.783,103.254z M47.813,59.028h-9.654V40.294 C38.158,23.89,53.31,10.591,72,10.591s33.842,13.298,33.842,29.703v18.734h-9.654V40.294c0-11.725-10.829-21.229-24.188-21.229 s-24.188,9.504-24.188,21.229V59.028z";
+    -fx-background-color: color-locked-text;
+    -fx-padding: 0.5em;
+}
+
+/* Green/Red/Yellow Leds */
+.fx-led.toggle-button {
+    -fx-min-height: 15;
+    -fx-max-height: 15;
+    -fx-pref-height: 15;
+    -fx-background-insets: 0.5px, 1.5px, 3px;
+    -fx-background-radius: 0.8em;
+    -fx-opacity: 0.8;
+    -fx-padding: 0.5em;
+}
+
+.fx-led:selected {
+    -fx-opacity: 1.0;
+}
+
+.fx-led:focused {
+    -fx-background-insets: 1.5px;
+    -fx-background-radius: 0.8em;
+}
+
+.fx-led-green {
+    -fx-background-color:  transparent, background-color, color-light-neutral;
+}
+
+.fx-led-green:selected {
+    -fx-background-color: color-good-green, background-color, color-good-green;
+}
+
+.fx-led-yellow {
+    -fx-background-color:  transparent, background-color, color-light-neutral;
+}
+
+.fx-led-yellow:selected {
+    -fx-background-color: color-warning-yellow, background-color, color-warning-yellow;
+}
+
+.fx-led-red {
+    -fx-background-color:  transparent, background-color, color-light-neutral;
+}
+
+.fx-led-red:selected {
+    -fx-background-color: color-fault-red, background-color, color-fault-red;
+}
+
+.fx-led-blue {
+    -fx-background-color:  transparent, background-color, color-light-charcoal;
+}
+
+.fx-led-blue:selected {
+    -fx-background-color: color-dark-turquoise, background-color, color-dark-turquoise;
+}
+
+.fx-separator {
+    -fx-padding: 15 0 15 0;
+    -fx-min-height: 30;
+}
+
+.fx-separator-hr {
+    -fx-border-color: #ccc;
+    -fx-border-width: 0 0 1 0;
+    -fx-min-height: 2;
+}
+
+/* fx-label */
+.fx-label.label:disabled {
+    -fx-opacity: .3;
+}
+
+/* fx-checkbox */
+.fx-checkbox {
+    -fx-cursor: hand;
+    -fx-text-fill: #888;
+}
+
+.fx-checkbox .fx-label,
+.fx-checkbox > .fx-label {
+    -fx-font-size: 18;
+}
+
+.fx-checkbox:hover {
+    -fx-text-fill: button-body-hover;
+}
+
+.fx-checkbox-selected,
+.fx-checkbox-selected .label {
+    -fx-text-fill: button-body-selected;
+}
+
+.fx-checkbox-selected:hover {
+    -fx-text-fill: button-body-selected-hover;
+}
+
+.fx-checkbox .check-box .box,
+.fx-checkbox > .check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: text-color;
+    -fx-border-width: 2;
+    -fx-padding: 3 8;
+}
+
+.fx-checkbox-invalid .check-box .box {
+    -fx-border-color: darkred;
+    -fx-border-width: 2;
+}
+
+.fx-checkbox .check-box{
+    -fx-label-padding: 0;
+}
+
+.fx-checkbox-selected .check-box .box {
+    -fx-background-color: button-body-selected;
+    -fx-border-color: button-body-selected;
+    -fx-border-width: 2;
+}
+
+.fx-checkbox .check-box .mark {
+    -fx-background-color: color-light-charcoal;
+    -fx-background-color: white;
+}
+
+.fx-checkbox-selected .check-box .mark {
+    -fx-background-color: white;
+}
+
+.fx-table-view .scroll-bar * {
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+.fx-hamburger {
+    -fx-shape: "M 0 0 L 20 0 L 20 3 L 0 3 Z M 0 7 L 20 7 L 20 10 L 0 10 Z M 0 14 L 20 14 L 20 17 L 0 17 Z";
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-min-width: 15px;
+    -fx-max-width: 15px;
+    -fx-min-height: 15px;
+    -fx-max-height: 15px;
+    -fx-background-color: #000;
+}
+
+.fx-hamburger:hover {
+    -fx-background-color: color-light-turquoise;
+}
+
+.fx-hamburger:selected {
+    -fx-opacity: 1;
+}
+
+/* fx-points-chart */
+.fx-graph {
+    -fx-border-color: black;
+    -fx-border-width: 0 0 3px 3px;
+}
+
+.fx-disabled .fx-graph {
+    -fx-border-color: #ddd;
+}
+
+.fx-points-chart {
+    -fx-padding: 0;
+}
+
+.fx-points-chart .fx-legend {
+    -fx-alignment: center;
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+}
+
+.fx-points-chart .fx-label-y {
+    -fx-padding: 0 10 0 0;
+    -fx-text-alignment: right;
+    -fx-alignment: center-right;
+    -fx-line-spacing: -5px;
+}
+
+.fx-points-chart .fx-dotted-line {
+    -fx-stroke-width: 1px;
+    -fx-stroke-dash-array: 10 7;
+}
+
+.fx-points-chart .fx-small-circle {
+    -fx-fill: white;
+    -fx-stroke: black;
+    -fx-stroke-width: 2;
+}
+
+.fx-disabled .fx-dotted-line,
+.fx-disabled .fx-plot-line,
+.fx-disabled .fx-small-circle {
+    -fx-opacity: .1!important;
+}
+
+.fx-message {
+    -fx-font-size: 1.1em;
+    -fx-font-style: italic;
+    -fx-background-color: #C5E39F;
+    -fx-alignment: center-right;
+}
+
+.fx-message .fx-label-p {
+    -fx-text-fill: #323D44;
+    -fx-font-weight: bold;
+    -fx-padding: 0 3 2 0;
+}
+
+.fx-message-invalid {
+    -fx-background-color: color-invalid-background;
+}
+
+.fx-message-invalid .fx-label-p {
+    -fx-font-size: 1em;
+    -fx-font-weight: bold;
+    -fx-padding: 0 3 2 0;
+    -fx-text-fill: #323D44;
+}
+
+.fx-disabled .fx-message .fx-label-p,
+.fx-disabled .fx-message {
+    -fx-background-color: #FFF;
+    -fx-text-fill: #FFF!important;
+}
+
+.fx-disabled .text-input {
+    -fx-background-color: white!important;
+    -fx-border-color: #ddd;
+    -fx-text-fill: #efefef;
+    -fx-opacity: .5;
+}
+
+/* fx-submittable-choice-box */
+.fx-submittable-choice-box.choice-box,
+.fx-submittable-choice-box.choice-box .context-menu {
+    -fx-cursor: hand;
+}
+
+.fx-submittable-choice-box.fx-indeterminate {
+    -fx-mark-color: white;
+    -fx-background-color: color-indeterminate-background;
+    -fx-cursor: default;
+}
+
+.fx-submittable-choice-box.fx-indeterminate .arrow {
+    -fx-background-color: white;
+}
+
+.fx-submittable-choice-box.fx-indeterminate > .label {
+    -fx-text-fill: white;
+}
+
+.fx-submittable-choice-box:disabled {
+    -fx-opacity: .5;
+}
+
+.fx-submittable-choice-box:disabled > .label {
+    -fx-opacity: 1;
+}
+
+/* fx-submittable-combo-box */
+.fx-submittable-combo-box.combo-box,
+.fx-submittable-combo-box.combo-box .context-menu {
+    -fx-cursor: hand;
+}
+
+.fx-submittable-combo-box.fx-indeterminate {
+    -fx-mark-color: white;
+    -fx-background-color: color-indeterminate-background;
+    -fx-cursor: default;
+}
+
+.fx-submittable-combo-box.fx-indeterminate .arrow-button {
+    -fx-background-color: color-indeterminate-background;
+}
+
+.fx-submittable-combo-box.fx-indeterminate .arrow {
+    -fx-background-color: white;
+}
+
+.fx-submittable-combo-box.fx-indeterminate > .list-cell {
+    -fx-text-fill: white;
+}
+
+.fx-submittable-combo-box .combo-box-popup {
+    -fx-cursor: hand;
+}
+
+.fx-submittable-combo-box .list-view {
+    -fx-cursor: hand;
+}
+
+.fx-submittable-combo-box:disabled {
+    -fx-opacity: .5;
+}
+
+.fx-submittable-combo-box:disabled > .label {
+    -fx-opacity: 1;
+}
+
+/* fx-submittable-check-box */
+.fx-submittable-check-box.check-box .box{
+    -fx-cursor: hand;
+    -fx-border-width: .1px;
+    -fx-border-color: #ddd;
+}
+
+.fx-submittable-check-box.check-box:hover .box {
+    -fx-background-color: #F4F6FB;
+}
+
+.fx-submittable-check-box.check-box:selected .box {
+    -fx-background-color: color-medium-turquoise;
+}
+
+.fx-submittable-check-box.check-box:selected:hover .box,
+.fx-submittable-check-box.check-box:selected:focused .box {
+    -fx-border-color: green;
+    -fx-border-width: 1px;
+}
+
+
+.fx-submittable-check-box.check-box:hover .box,
+.fx-submittable-check-box.check-box:focused .box {
+    -fx-border-color: color-light-turquoise;
+    -fx-border-width: 1px;
+}
+
+.fx-submittable-check-box.check-box .mark {
+    -fx-padding: 6px;
+}
+
+.fx-submittable-check-box.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.fx-submittable-check-box.check-box:disabled {
+    -fx-opacity: 1;
+}
+
+.fx-submittable-check-box.check-box:disabled .box {
+    -fx-opacity: .5!important;
+}
+
+.fx-submittable-check-box.check-box.fx-indeterminate {
+    -fx-cursor: default;
+}
+
+.fx-submittable-check-box.check-box.fx-indeterminate .box {
+    -fx-opacity: .5!important;
+    -fx-background-color: color-indeterminate-background;
+}
+
+.fx-submittable-check-box.check-box.fx-indeterminate:selected  > .box {
+    -fx-background-color: color-indeterminate-background!important;
+}
+
+/* fx-submittable-text-field */
+.fx-submittable-text-field.text-field,
+.fx-submittable-spinner.spinner .text-field {
+    -fx-cursor: hand;
+}
+
+.fx-submittable-text-field .fx-lock-icon {
+    -fx-shape: "M103.969,66.75H40.032h-12v12v23.546v23.546c0,6.627,5.373,12,12,12h63.937c6.627,0,12-5.373,12-12v-23.546V78.75v-12 H103.969z M77.783,103.254v24.994H66.216v-24.994c-4.912-2.211-8.337-7.138-8.337-12.873c0-7.799,6.322-14.121,14.121-14.121 s14.121,6.322,14.121,14.121C86.121,96.117,82.695,101.044,77.783,103.254z M47.813,59.028h-9.654V40.294 C38.158,23.89,53.31,10.591,72,10.591s33.842,13.298,33.842,29.703v18.734h-9.654V40.294c0-11.725-10.829-21.229-24.188-21.229 s-24.188,9.504-24.188,21.229V59.028z";
+    -fx-background-color: color-light-neutral;
+    -fx-padding: 0.5em;
+}
+
+.fx-submittable-text-field:disabled {
+    -fx-opacity: 1;
+    -fx-control-inner-background: color-disable-background;
+    -fx-text-fill: color-disable-text;
+}
+
+.fx-submittable-text-field.fx-dirty,
+.fx-submittable-spinner.spinner.fx-dirty .text-field {
+    -fx-control-inner-background: color-dirty-background;
+    space-color: color-dirty-background;
+}
+
+.fx-submittable-text-field.fx-invalid,
+.fx-submittable-spinner.spinner.fx-invalid .text-field {
+    -fx-control-inner-background: color-invalid-background;
+    space-color: color-invalid-background;
+}
+
+.fx-submittable-text-field.fx-indeterminate,
+.fx-submittable-spinner.spinner.fx-indeterminate .text-field {
+    -fx-control-inner-background: color-indeterminate-background;
+    -fx-text-fill: color-indeterminate-text!important;
+    space-color: color-indeterminate-background;
+    -fx-cursor: default;
+}
+
+.fx-locked {
+    -fx-control-inner-background: color-locked-background;
+    -fx-cursor: default;
+    -fx-text-fill: color-locked-text;
+}
+
+/* fx-submittable-toggle-buttons */
+.fx-submittable-toggle-button.toggle-button {
+    -fx-cursor: hand;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3px;
+}
+
+.fx-submittable-toggle-button.toggle-button:focused {
+    -fx-cursor: hand;
+    -fx-border-color: color-light-turquoise;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3px;
+}
+
+.fx-submittable-toggle-button.toggle-button.fx-indeterminate {
+    -fx-background-color: color-indeterminate-background!important;
+}
+
+/*.fx-submittable-choice-box.choice-box.fx-indeterminate,*/
+.fx-submittable-toggle-button.toggle-button .fx-indeterminate {
+    -fx-background-color: #52C9FF!important;
+    -fx-text-fill: color-indeterminate-text!important;
+    -fx-cursor: default;
+}
+
+.fx-submittable-toggle-button.toggle-button.fx-indeterminate {
+    -fx-background-color: color-indeterminate-background!important;
+    -fx-text-fill: white;
+}
+
+.fx-submittable-toggle-button.fx-temp-disable,
+.fx-submittable-toggle-button.fx-temp-disable:hover {
+    -fx-cursor: default;
+    -fx-opacity: .75;
+    -fx-background-color: #999;
+    -fx-text-fill: #d6d6d6;
+}
+
+/* fx-submittable-radio-box */
+.fx-submittable-radio-box.radio-button .radio {
+    -fx-background-color: white;
+    -fx-border-color: #444;
+    -fx-cursor: hand;
+    -fx-background-image: null;
+
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 2 4 4 4;
+}
+
+.fx-submittable-radio-box.radio-button .dot {
+    -fx-background-radius: 0px;
+}
+
+.fx-submittable-radio-box.radio-button:focused .radio {
+    -fx-border-color: color-light-turquoise;
+}
+
+.fx-submittable-radio-box.radio-button:hover .radio {
+    -fx-border-color: color-light-turquoise;
+    -fx-background-color: #F4F6FB;
+}
+
+.fx-submittable-radio-box.fx-indeterminate.radio-button .radio {
+    -fx-background-color: #888!important;
+    -fx-border-color: #888!important;
+    -fx-padding: 2 4 4 4;
+    -fx-opacity: .5;
+}
+
+.fx-submittable-radio-box.fx-indeterminate.radio-button .dot {
+    -fx-background-color: #888!important;
+}
+
+.fx-submittable-radio-box.fx-indeterminate.radio-button:selected .radio {
+    -fx-background-color: white!important;
+    -fx-border-color: #222!important;
+    -fx-padding: 2 4 4 4;
+    -fx-opacity: .5;
+}
+
+.fx-submittable-radio-box.fx-indeterminate.radio-button:selected .dot {
+    -fx-background-color: color-light-turquoise!important;
+}
+
+.fx-submittable-radio-box:disabled,
+.fx-submittable-radio-box.radio-button.fx-disabled {
+    -fx-opacity: .5;
+    -fx-cursor: default;
+}
+
+.fx-submittable-radio-box:disabled .radio,
+.fx-submittable-radio-box.radio-button.fx-disabled .radio {
+    -fx-opacity: .5;
+    -fx-cursor: default;
+}
+
+.fx-submittable-radio-box:selected .radio,
+.fx-submittable-radio-box:selected:disabled .radio{
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 3px;
+}
+
+.fx-submittable-radio-box:selected .radio {
+    -fx-background-radius: 0;
+    -fx-background-image: null;
+}
+
+.fx-submittable-radio-box:disabled .radio {
+    -fx-background-radius: 0;
+    -fx-background-color: inherit;
+    -fx-border-radius: 0;
+}
+
+/* fx-submittable-spinner */
+.fx-submittable-spinner.spinner {
+    -fx-skin: "com.sun.javafx.scene.control.skin.SpinnerSkin";
+}
+
+.fx-submittable-spinner.spinner .increment-arrow-button,
+.fx-submittable-spinner.spinner .decrement-arrow-button {
+    -fx-cursor: hand;
+}
+
+.fx-submittable-spinner.spinner.fx-indeterminate .increment-arrow-button,
+.fx-submittable-spinner.spinner.fx-indeterminate .decrement-arrow-button {
+    -fx-opacity: .4;
+    -fx-cursor: default;
+}
+
+.fx-submittable-spinner.spinner.fx-indeterminate .increment-arrow-button .increment-arrow,
+.fx-submittable-spinner.spinner.fx-indeterminate .decrement-arrow-button .decrement-arrow {
+    /*-fx-background-color: white;*/
+}
+
+.fx-zero-padding {
+    -fx-padding: 0!important;
+}
+
+/*
+ *  RESETS submittable components to default styles
+ *  (jfxrt.jar - modena.css/touch.css)
+ */
+.fx-submittable-spinner.spinner {
+    -fx-background-color:
+            linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+            linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+}
+.fx-submittable-spinner.spinner:focused,
+.fx-submittable-spinner.spinner:contains-focus {
+    -fx-background-color: -fx-focus-color, -fx-inner-border, -fx-body-color, -fx-faint-focus-color, -fx-body-color;
+    -fx-background-insets: -0.2, 1, 2, -1.4, 2.6;
+    -fx-background-radius: 3, 2, 1, 4, 1;
+}
+.fx-submittable-spinner.spinner > .text-field {
+    -fx-background-color:
+            linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+            linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets: 0, 1 0 1 1;
+    -fx-background-radius: 3 0 0 3, 2 0 0 2;
+}
+.fx-submittable-spinner.spinner:focused > .text-field,
+.fx-submittable-spinner.spinner:contains-focus > .text-field {
+    -fx-background-color:
+            -fx-control-inner-background,
+            -fx-faint-focus-color,
+            linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets: 1 0 1 1, 1 0 1 1, 3 2 3 3;
+    -fx-background-radius: 2 0 0 2, 1 0 0 1, 0;
+}
+
+.fx-submittable-spinner.spinner .increment-arrow-button {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+    /*Change the two 0's here to -1 to get rid of the horizontal line */
+    -fx-background-insets: 0 0 -1 0, 1 1 0 1, 2 2 1 2;
+    -fx-background-radius: 0 3 0 0, 0 2 0 0, 0 1 0 0;
+    -fx-padding: 0.333335em 0.666667em 0.333335em 0.666667em;  /* 5 8 3 8 */
+}
+.fx-submittable-spinner.spinner .decrement-arrow-button {
+    -fx-background-color: -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0, 1 1 1 1, 1 2 2 2;
+    -fx-background-radius: 0 0 3 0, 0 0 2 0, 0 0 1 0;
+    -fx-padding: 0.333335em 0.666667em 0.333335em 0.666667em;  /* 3 8 5 8 */
+}
+.fx-submittable-spinner.spinner:focused .increment-arrow-button,
+.fx-submittable-spinner.spinner:contains-focus .increment-arrow-button,
+.fx-submittable-spinner.spinner:focused .decrement-arrow-button,
+.fx-submittable-spinner.spinner:contains-focus .decrement-arrow-button {
+    -fx-background-color: -fx-focus-color, -fx-body-color, -fx-faint-focus-color, -fx-body-color;
+}
+
+.fx-submittable-spinner.spinner .increment-arrow-button .increment-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 0 0 -1 0, 0;
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em;  /* 2 4 2 4 */
+    -fx-shape: "M 0 4 h 7 l -3.5 -4 z";
+}
+.fx-submittable-spinner.spinner .decrement-arrow-button .decrement-arrow {
+    -fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+    -fx-background-insets: 0 0 -1 0, 0;
+    -fx-padding: 0.166667em 0.333333em 0.166667em 0.333333em; /* 2 4 2 4 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+.fx-submittable-text-field.text-field {
+    -fx-padding: 6 5 6 5;
+}
+
+.fx-submittable-text-field.text-input {
+    -fx-text-fill: -fx-text-inner-color;
+    -fx-highlight-fill: derive(-fx-control-inner-background,-20%);
+    -fx-highlight-text-fill: -fx-text-inner-color;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background,-30%);
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+    linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+    -fx-cursor: text;
+    -fx-padding: 0.1333333em 0.583em 0.1333333em 0.583em;
+}
+.fx-submittable-text-field.text-input:focused {
+    -fx-highlight-fill: -fx-accent;
+    -fx-highlight-text-fill: white;
+    -fx-background-color:
+            -fx-focus-color,
+            -fx-control-inner-background,
+            -fx-faint-focus-color,
+            linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets: -0.2, 1, -1.4, 3;
+    -fx-background-radius: 3, 2, 4, 0;
+    -fx-prompt-text-fill: transparent;
+}

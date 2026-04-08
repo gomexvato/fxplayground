@@ -1,22 +1,23 @@
 package com.playground;
 
-import javafx.beans.property.BooleanProperty;
-import com.playground.components.PFxHBox;
+import com.components.Fx;
+import com.components.boxes.FxHBox;
+import com.components.boxes.FxVBox;
 import com.playground.components.PFxLabel;
-import com.playground.components.PFxVBox;
+import com.playground.utils.codeview.CodeView;
+import javafx.beans.property.BooleanProperty;
 import javafx.scene.Node;
 import javafx.scene.layout.Priority;
 import javafx.scene.web.WebView;
-import com.playground.utils.codeview.CodeView;
 
-class VariantContent extends PFxVBox {
+class VariantContent extends FxVBox {
 
     VariantContent(String componentJavaPath, String playgroundJavaPath,
                    ComponentVariant variant, BooleanProperty viewCodeProp) {
         super(10, "content");
         setStyle("-fx-background-color: white");
 
-        PFxVBox componentBox = new PFxVBox();
+        FxVBox componentBox = Fx.vBox();
         String description = variant.getDescription();
         if(description!=null) componentBox.add(PFxLabel.wrapped(description, 500));
         componentBox.add(variant.getComponent());
@@ -25,17 +26,17 @@ class VariantContent extends PFxVBox {
         int minHeight = variant.getMinHeight();
         WebView source = CodeView.get(componentJavaPath, playgroundJavaPath, variant.getClass());
         source.visibleProperty().bind(viewCodeProp);
-        PFxHBox box = content(componentBox, source, minHeight);
+        FxHBox box = content(componentBox, source, minHeight);
         add(box);
         box.setMinHeight(minHeight);
     }
 
-    private PFxHBox content(Node component, WebView source, int minHeight) {
-        PFxHBox box = new PFxHBox(component, PFxHBox.spacer(), source);
+    private FxHBox content(Node component, WebView source, int minHeight) {
+        FxHBox box = Fx.hBox(component, FxHBox.spacer(), source);
         source.managedProperty().bind(source.visibleProperty());
         box.setMinHeight(minHeight);
         box.setMaxHeight(minHeight);
-        PFxHBox.setHgrow(source, Priority.ALWAYS);
+        FxHBox.setHgrow(source, Priority.ALWAYS);
         return box;
     }
 }
