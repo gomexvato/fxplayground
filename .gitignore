@@ -12,3 +12,6 @@ build/
 
 # idea
 .idea
+
+# Runtime-generated files
+**/playground.json
