@@ -11,8 +11,6 @@ public class PFxWebView {
         view = new WebView();
         WebEngine engine = view.getEngine();
         engine.setJavaScriptEnabled(true);
-        engine.loadContent(html);
-        view.requestFocus();
         if(script != null) {
             engine.getLoadWorker().stateProperty().addListener((o, ov, nv) -> {
                 if (nv == Worker.State.SUCCEEDED) {
@@ -20,6 +18,8 @@ public class PFxWebView {
                 }
             });
         }
+        engine.loadContent(html);
+        view.requestFocus();
     }
 
     public PFxWebView(String html) {

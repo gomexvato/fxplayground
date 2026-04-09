@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class CodeView {
 
-    private final static String codeViewDir = "/playground/utils/codeview/";
+    private final static String codeViewDir = "/com/playground/utils/codeview/";
 
     // returns a webview for the component's code (getComponent method)
     public static WebView get(
@@ -33,14 +33,26 @@ public class CodeView {
 
     private static String html(String scModuleJavaPath, String javaCode) {
         try {
-            String template = FileUtils.read(scModuleJavaPath + codeViewDir + "template.html");
-            String baseHref = scModuleJavaPath + codeViewDir;
+            String dir = scModuleJavaPath + codeViewDir;
+            String template    = FileUtils.read(dir + "template.html");
+            String highlightJs = FileUtils.read(dir + "highlight.min.js");
+            String javaJs      = FileUtils.read(dir + "java.min.js");
+            String defaultCss  = FileUtils.read(dir + "default.min.css");
+            String styleCss    = FileUtils.read(dir + "style.css");
+
             String html = javaCode != null
                     ? template.replace("{JAVA_SOURCE}", javaCode)
                     : "check your source code - the code viewer only handles simple code";
-            return html.replace("{BASE_HREF}", "file:///" + baseHref);
+
+            // Inline all assets so loadContent() works without a base URL
+            html = html.replace("<base href=\"{BASE_HREF}\">", "");
+            html = html.replace("<link rel=\"stylesheet\" href=\"default.min.css\"/>", "<style>" + defaultCss + "</style>");
+            html = html.replace("<link rel=\"stylesheet\" href=\"style.css\"/>", "<style>" + styleCss + "</style>");
+            html = html.replace("<script src=\"highlight.min.js\"></script>", "<script>" + highlightJs + "</script>");
+            html = html.replace("<script src=\"java.min.js\"></script>", "<script>" + javaJs + "</script>");
+            return html;
         } catch (IOException e) {
-            return "Unable to load template!";
+            return "Unable to load template: " + e.getMessage();
         }
     }
 
