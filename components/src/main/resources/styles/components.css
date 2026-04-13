@@ -489,7 +489,7 @@
     -fx-background-radius: 3px, 3px, 2px, 1px;
     -fx-text-fill: -fx-text-base-color;
     -fx-opacity: 1;
-    -fx-cursor: pointer;
+    -fx-cursor: hand;
     -fx-font-weight: null;
     -fx-padding: 2 4 2 4;
     -fx-min-width: 105;
@@ -526,6 +526,12 @@
     -fx-padding:1em;
     -fx-background-color: #efefef;
     -fx-border-color: #ddd;
+}
+
+.fx-link,
+.fx-link-selected,
+.fx-link-highlight {
+    -fx-cursor: hand;
 }
 
 .fx-link {
@@ -1396,6 +1402,11 @@
     -fx-cursor: text;
     -fx-padding: 0.1333333em 0.583em 0.1333333em 0.583em;
 }
+.fx-submittable-text-field.text-field:focused,
+.fx-submittable-text-field.text-input:focused {
+    -fx-cursor: text;
+}
+
 .fx-submittable-text-field.text-input:focused {
     -fx-highlight-fill: -fx-accent;
     -fx-highlight-text-fill: white;
@@ -1407,4 +1418,33 @@
     -fx-background-insets: -0.2, 1, -1.4, 3;
     -fx-background-radius: 3, 2, 4, 0;
     -fx-prompt-text-fill: transparent;
+}
+
+/* split-pane divider resize cursor */
+.split-pane > .split-pane-divider {
+    -fx-cursor: h-resize;
+}
+
+.split-pane:vertical > .split-pane-divider {
+    -fx-cursor: v-resize;
+}
+
+/* tree-view / list-view row cursors */
+.tree-view .tree-cell:filled,
+.list-view .list-cell:filled {
+    -fx-cursor: hand;
+}
+
+.tree-view .tree-cell:empty,
+.list-view .list-cell:empty {
+    -fx-cursor: default;
+}
+
+/* draggable elements */
+.fx-draggable {
+    -fx-cursor: open-hand;
+}
+
+.fx-draggable:pressed {
+    -fx-cursor: closed-hand;
 }
