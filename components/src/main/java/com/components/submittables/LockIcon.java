@@ -1,4 +1,4 @@
-package com.components.submittables;
+package com.components.submittable;
 
 import javafx.geometry.Pos;
 import javafx.scene.layout.Region;

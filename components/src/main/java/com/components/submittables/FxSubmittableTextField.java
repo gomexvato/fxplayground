@@ -1,10 +1,10 @@
-package com.components.submittables;
+package com.components.submittable;
 
+import com.core.Unit;
 import com.components.Fx;
+import com.components.converters.DoubleUnitStringConverter;
 import com.components.boxes.FxHBox;
 import com.components.converters.Converter;
-import com.components.converters.DoubleUnitStringConverter;
-import com.core.Unit;
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.beans.binding.BooleanBinding;
@@ -16,9 +16,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
-import javafx.util.Pair;
 import javafx.util.StringConverter;
 import javafx.util.converter.DoubleStringConverter;
+import javafx.util.Pair;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;

@@ -1,4 +1,4 @@
-package com.components.submittables;
+package com.components.submittable;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -13,5 +13,5 @@ public interface FxSubmittable<T> {
 
     // Controls to update the UI
 //    FxSubmittable<T> set(T t);
-    void setDouble(Double value);
+    void setDouble(Double value); // ASPEN factor value
 }
